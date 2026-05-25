@@ -9,7 +9,7 @@ import { fadeUp, stagger, viewport } from "@/lib/motion";
 const projects = [
   {
     name: "RevenueIQ",
-    description: "Custom boutique software for enterprise revenue intelligence.",
+    description: "Custom Boutique Software for Revenue Intelligence with an Agentic Layer (Headless).",
     url: "https://revenueiq-demo.vercel.app/pipeline",
     image:
       "https://api.microlink.io/?url=https%3A%2F%2Frevenueiq-demo.vercel.app%2Fpipeline&screenshot=true&meta=false&embed=screenshot.url",
@@ -23,7 +23,8 @@ const projects = [
   },
   {
     name: "Vigyaan",
-    description: "Applied AI research interface for complex enterprise knowledge workflows.",
+    description:
+      "viGYAAN - A modern testing platform for young learners, with AI agents that surface insights and drive score improvement.",
     url: "https://vigyaan-site.vercel.app/",
     image:
       "https://api.microlink.io/?url=https%3A%2F%2Fvigyaan-site.vercel.app%2F&screenshot=true&meta=false&embed=screenshot.url",
