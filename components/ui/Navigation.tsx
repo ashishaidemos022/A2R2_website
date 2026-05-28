@@ -2,6 +2,7 @@
 
 import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
+import { LogoMark } from "@/components/ui/LogoMark";
 
 const links = [
   { label: "Services", href: "#services" },
@@ -35,7 +36,12 @@ export function Navigation() {
         className="container-grid flex h-20 items-center justify-between"
         aria-label="Primary navigation"
       >
-        <a href="#top" className="font-serif text-xl tracking-[-0.02em]">
+        <a
+          href="#top"
+          className="flex items-center gap-2.5 font-serif text-xl tracking-[-0.02em]"
+          aria-label="A2R2 Labs — home"
+        >
+          <LogoMark size={32} className="shrink-0" />
           A2R2 Labs
         </a>
         <div className="hidden items-center gap-8 md:flex">

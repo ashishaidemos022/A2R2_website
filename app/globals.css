@@ -108,6 +108,33 @@ section {
     radial-gradient(circle at 18% 34%, rgba(201, 169, 97, 0.09), transparent 28rem);
 }
 
+/* A2R2 Labs orbit mark — dots travel along elliptical paths (see LogoMark). */
+@keyframes a2r2-orbit {
+  to {
+    offset-distance: 100%;
+  }
+}
+
+.logo-orbit-a1 {
+  offset-path: path("M 11.9 28 A 44 17 30 0 1 88.1 72 A 44 17 30 0 1 11.9 28");
+  animation: a2r2-orbit 22s linear infinite;
+}
+
+.logo-orbit-a2 {
+  offset-path: path("M 88.1 72 A 44 17 30 0 1 11.9 28 A 44 17 30 0 1 88.1 72");
+  animation: a2r2-orbit 22s linear infinite;
+}
+
+.logo-orbit-b1 {
+  offset-path: path("M 11.9 72 A 44 17 -30 0 1 88.1 28 A 44 17 -30 0 1 11.9 72");
+  animation: a2r2-orbit 22s linear infinite;
+}
+
+.logo-orbit-b2 {
+  offset-path: path("M 88.1 28 A 44 17 -30 0 1 11.9 72 A 44 17 -30 0 1 88.1 28");
+  animation: a2r2-orbit 22s linear infinite;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
