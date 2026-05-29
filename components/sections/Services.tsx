@@ -18,7 +18,7 @@ const services = [
   {
     icon: Blocks,
     title: "Custom Software",
-    body: "When the right tool does not exist, we build it. RevenueIQ is one example of boutique software developed for a specific enterprise need.",
+    body: "When the right tool does not exist, we build it - boutique software developed for a specific enterprise need.",
   },
 ];
 

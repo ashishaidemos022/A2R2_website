@@ -8,13 +8,6 @@ import { fadeUp, stagger, viewport } from "@/lib/motion";
 
 const projects = [
   {
-    name: "RevenueIQ",
-    description: "Custom Boutique Software for Revenue Intelligence with an Agentic Layer (Headless).",
-    url: "https://revenueiq-demo.vercel.app/pipeline",
-    image:
-      "https://api.microlink.io/?url=https%3A%2F%2Frevenueiq-demo.vercel.app%2Fpipeline&screenshot=true&meta=false&embed=screenshot.url",
-  },
-  {
     name: "AI Voice Agent",
     description: "Production-grade conversational voice agent.",
     url: "https://ai-voice-agent-sage.vercel.app/",
