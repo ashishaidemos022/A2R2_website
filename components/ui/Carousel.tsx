@@ -1,8 +1,10 @@
 "use client";
 
 import useEmblaCarousel from "embla-carousel-react";
+import { motion } from "framer-motion";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { ReactNode, useCallback, useEffect, useState } from "react";
+import { springSnappy } from "@/lib/motion";
 
 type CarouselProps = {
   children: ReactNode[];
@@ -57,22 +59,28 @@ export function Carousel({ children, label, className }: CarouselProps) {
           ))}
         </div>
         <div className="flex gap-3">
-          <button
+          <motion.button
             type="button"
-            className="grid size-11 place-items-center rounded-full border border-border bg-surface/70 text-text-primary transition hover:border-accent"
+            className="grid size-11 place-items-center rounded-full border border-border bg-surface/70 text-text-primary transition-colors hover:border-accent hover:text-accent"
             aria-label={`Previous ${label} slide`}
             onClick={scrollPrev}
+            whileHover={{ scale: 1.08 }}
+            whileTap={{ scale: 0.92 }}
+            transition={springSnappy}
           >
             <ArrowLeft size={18} />
-          </button>
-          <button
+          </motion.button>
+          <motion.button
             type="button"
-            className="grid size-11 place-items-center rounded-full border border-border bg-surface/70 text-text-primary transition hover:border-accent"
+            className="grid size-11 place-items-center rounded-full border border-border bg-surface/70 text-text-primary transition-colors hover:border-accent hover:text-accent"
             aria-label={`Next ${label} slide`}
             onClick={scrollNext}
+            whileHover={{ scale: 1.08 }}
+            whileTap={{ scale: 0.92 }}
+            transition={springSnappy}
           >
             <ArrowRight size={18} />
-          </button>
+          </motion.button>
         </div>
       </div>
     </div>

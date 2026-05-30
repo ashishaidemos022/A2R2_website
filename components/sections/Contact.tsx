@@ -45,13 +45,15 @@ export function Contact() {
             viewport={{ once: true }}
             transition={{ duration: 0.7, ease, delay: 0.2 }}
           >
-            <a
+            <motion.a
               href="mailto:sales@a2r2labs.ai"
-              className="inline-flex items-center justify-center gap-2.5 rounded-full bg-accent px-8 py-4 text-base font-semibold text-bg-primary transition hover:bg-text-primary active:scale-[0.99]"
+              className="inline-flex items-center justify-center gap-2.5 rounded-full bg-accent px-8 py-4 text-base font-semibold text-bg-primary transition-colors hover:bg-text-primary"
+              whileHover={{ y: -2 }}
+              whileTap={{ scale: 0.98 }}
             >
               <Mail size={18} />
               sales@a2r2labs.ai
-            </a>
+            </motion.a>
           </motion.div>
         </div>
       </div>

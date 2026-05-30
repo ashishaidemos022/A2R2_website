@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Carousel } from "@/components/ui/Carousel";
-import { fadeUp, stagger, viewport } from "@/lib/motion";
+import { fadeUp, springSoft, stagger, viewport } from "@/lib/motion";
 
 const industries = [
   {
@@ -57,23 +57,25 @@ export function Industries() {
         <motion.div className="mt-14" variants={fadeUp}>
           <Carousel label="Industries">
             {industries.map((industry) => (
-              <article
+              <motion.article
                 key={industry.name}
-                className="relative h-[430px] min-w-0 flex-[0_0_88%] overflow-hidden rounded-lg border border-border bg-surface md:flex-[0_0_calc((100%-48px)/2.5)]"
+                className="group relative h-[430px] min-w-0 flex-[0_0_88%] overflow-hidden rounded-lg border border-border bg-surface transition-colors duration-300 hover:border-accent/70 md:flex-[0_0_calc((100%-48px)/2.5)]"
+                whileHover={{ y: -6 }}
+                transition={springSoft}
               >
                 <Image
                   src={industry.image}
                   alt=""
                   fill
                   sizes="(min-width: 768px) 42vw, 88vw"
-                  className="object-cover saturate-[.7] transition duration-500"
+                  className="object-cover saturate-[.7] transition duration-700 ease-out group-hover:scale-[1.05] group-hover:saturate-100"
                 />
                 <div className="absolute inset-0 bg-gradient-to-b from-black/5 via-black/25 to-black/75" />
                 <div className="absolute inset-x-0 bottom-0 p-6 md:p-7">
                   <h3 className="max-w-[18rem] text-2xl font-medium leading-tight">{industry.name}</h3>
                   <p className="mt-4 text-sm leading-[1.65] text-text-primary/78">{industry.description}</p>
                 </div>
-              </article>
+              </motion.article>
             ))}
           </Carousel>
         </motion.div>

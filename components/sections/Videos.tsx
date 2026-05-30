@@ -26,16 +26,22 @@ export function Videos() {
             <p className="mt-6 text-lg leading-[1.75] text-text-secondary">
               A curated set of videos from the A2R2 channel covering applied AI, product thinking, and deployed systems.
             </p>
-            <a
+            <motion.a
               href={`https://www.youtube.com/playlist?list=${playlistId}`}
               target="_blank"
               rel="noreferrer"
-              className="mt-8 inline-flex items-center gap-3 rounded-full border border-border px-5 py-3 text-sm font-semibold text-text-primary transition hover:border-accent"
+              className="group mt-8 inline-flex items-center gap-3 rounded-full border border-border px-5 py-3 text-sm font-semibold text-text-primary transition-colors hover:border-accent"
+              whileHover={{ y: -2 }}
+              whileTap={{ scale: 0.98 }}
             >
               <Play size={16} aria-hidden="true" />
               Open playlist
-              <ArrowUpRight size={16} aria-hidden="true" />
-            </a>
+              <ArrowUpRight
+                size={16}
+                aria-hidden="true"
+                className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+              />
+            </motion.a>
           </motion.div>
           <motion.div variants={fadeUp}>
             <YouTubePlaylistEmbed playlistId={playlistId} title="A2R2 key videos playlist" />

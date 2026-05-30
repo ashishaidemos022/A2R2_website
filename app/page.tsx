@@ -1,3 +1,4 @@
+import { Approach } from "@/components/sections/Approach";
 import { Contact } from "@/components/sections/Contact";
 import { Hero } from "@/components/sections/Hero";
 import { Industries } from "@/components/sections/Industries";
@@ -19,6 +20,7 @@ export default function Home() {
         <Opportunity />
         <Services />
         <WhyA2R2 />
+        <Approach />
         <Industries />
         <Work />
         <Contact />

@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 import { Carousel } from "@/components/ui/Carousel";
-import { fadeUp, stagger, viewport } from "@/lib/motion";
+import { fadeUp, springSoft, stagger, viewport } from "@/lib/motion";
 
 const projects = [
   {
@@ -43,9 +43,11 @@ export function Work() {
         <motion.div className="mt-14" variants={fadeUp}>
           <Carousel label="Selected work">
             {projects.map((project) => (
-              <article
+              <motion.article
                 key={project.name}
-                className="group min-w-0 flex-[0_0_92%] rounded-lg border border-border bg-surface/70 p-4 transition hover:border-accent/70 md:flex-[0_0_82%] md:p-6"
+                className="group min-w-0 flex-[0_0_92%] rounded-lg border border-border bg-surface/70 p-4 transition-colors hover:border-accent/70 md:flex-[0_0_82%] md:p-6"
+                whileHover={{ y: -4 }}
+                transition={springSoft}
               >
                 <a href={project.url} target="_blank" rel="noreferrer" className="block">
                   <div className="overflow-hidden rounded-md border border-border bg-bg-primary">
@@ -71,12 +73,12 @@ export function Work() {
                       <h3 className="text-2xl font-medium">{project.name}</h3>
                       <p className="mt-2 text-text-secondary">{project.description}</p>
                     </div>
-                    <span className="inline-flex size-11 items-center justify-center rounded-full border border-border text-text-primary transition group-hover:border-accent">
-                      <ArrowUpRight size={18} />
+                    <span className="inline-flex size-11 items-center justify-center rounded-full border border-border text-text-primary transition-colors group-hover:border-accent group-hover:text-accent">
+                      <ArrowUpRight size={18} className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                     </span>
                   </div>
                 </a>
-              </article>
+              </motion.article>
             ))}
           </Carousel>
         </motion.div>

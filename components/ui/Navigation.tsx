@@ -7,6 +7,7 @@ import { LogoMark } from "@/components/ui/LogoMark";
 const links = [
   { label: "Services", href: "#services" },
   { label: "Why A2R2", href: "#why-a2r2" },
+  { label: "Approach", href: "#approach" },
   { label: "Industries", href: "#industries" },
   { label: "Videos", href: "#videos" },
   { label: "Work", href: "#work" },

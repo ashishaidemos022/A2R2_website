@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Blocks, BrainCircuit, Workflow } from "lucide-react";
-import { fadeUp, stagger, viewport } from "@/lib/motion";
+import { fadeUp, springSoft, stagger, viewport } from "@/lib/motion";
 
 const services = [
   {
@@ -44,11 +44,17 @@ export function Services() {
             return (
               <motion.article
                 key={service.title}
-                className="group min-h-[310px] rounded-lg border border-border bg-surface/55 p-7 transition duration-300 hover:-translate-y-1 hover:border-accent/70"
+                className="group min-h-[310px] rounded-lg border border-border bg-surface/55 p-7 transition-colors duration-300 hover:border-accent/70"
                 variants={fadeUp}
+                whileHover={{ y: -6 }}
+                transition={springSoft}
               >
                 <div className="mb-10 flex items-center justify-between">
-                  <Icon className="text-accent" size={26} aria-hidden="true" />
+                  <Icon
+                    className="text-accent transition-transform duration-300 group-hover:scale-110"
+                    size={26}
+                    aria-hidden="true"
+                  />
                   <span className="font-serif text-4xl text-text-primary/10">{String(index + 1).padStart(2, "0")}</span>
                 </div>
                 <h3 className="text-2xl font-medium leading-tight">{service.title}</h3>
