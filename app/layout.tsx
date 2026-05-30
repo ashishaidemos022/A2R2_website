@@ -18,13 +18,17 @@ export const metadata: Metadata = {
   title: "A2R2 Labs | Agentic AI Architecture",
   description:
     "A2R2 Labs partners with enterprises to design and deploy agentic AI workflows for regulated, mission-critical environments.",
-  metadataBase: new URL("https://a2r2labs.com"),
+  metadataBase: new URL("https://a2r2labs.ai"),
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     title: "A2R2 Labs | Agentic AI Architecture",
     description:
       "Agentic AI architecture and deployment for enterprises operating in regulated, mission-critical environments.",
-    url: "https://a2r2labs.com",
+    url: "https://a2r2labs.ai",
     siteName: "A2R2 Labs",
+    locale: "en_US",
     type: "website",
   },
   twitter: {
@@ -38,6 +42,20 @@ export const metadata: Metadata = {
   },
 };
 
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "A2R2 Labs",
+  url: "https://a2r2labs.ai",
+  logo: "https://a2r2labs.ai/icon.svg",
+  description:
+    "A2R2 Labs partners with enterprises to design and deploy agentic AI workflows for regulated, mission-critical environments.",
+  email: "sales@a2r2labs.ai",
+  sameAs: [
+    "https://www.youtube.com/playlist?list=PLzGSTV_ZN--GFRCejUUGDnONKsBrFRzB-",
+  ],
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -49,7 +67,13 @@ export default function RootLayout({
       className={`${serif.variable} ${sans.variable}`}
       suppressHydrationWarning
     >
-      <body>{children}</body>
+      <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
+        {children}
+      </body>
     </html>
   );
 }

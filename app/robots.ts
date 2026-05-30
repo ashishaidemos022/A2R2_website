@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://a2r2labs.com/sitemap.xml",
+    sitemap: "https://a2r2labs.ai/sitemap.xml",
   };
 }
